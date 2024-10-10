@@ -4,7 +4,6 @@ from functools import cached_property
 from pydantic import (
     BaseModel,
     EmailStr,
-    StrictInt,
     StrictStr,
     computed_field,
     PositiveInt,
@@ -19,6 +18,20 @@ class Item(BaseModel):
     email: EmailStr
     quantity: PositiveInt
     expiry_date: FutureDate
+
+    @computed_field
+    @cached_property
+    def created_date(self) -> date:
+        "returns today date"
+
+        return date.today()
+
+
+class ClockIn(BaseModel):
+
+    id: PositiveInt
+    email: EmailStr
+    location: StrictStr
 
     @computed_field
     @cached_property

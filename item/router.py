@@ -1,16 +1,17 @@
 from typing import Annotated
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, HTTPException
 
 from .params import FilterParams
-from .errors import RESOURCE_NOT_FOUND
 from core.entity import Item
 from database import T_Item
 
 ITEM_ROUTER = APIRouter()
 
+RESOURCE_NOT_FOUND = HTTPException(status_code=404, detail="resource not found")
 
-@ITEM_ROUTER.post("/items/", status_code=201)
+
+@ITEM_ROUTER.post("/items", status_code=201)
 def create_item(item: Item) -> Item:
     "Create an item"
 
@@ -28,7 +29,7 @@ def get_item(item_id: int) -> Item:
     return Item(**item)
 
 
-@ITEM_ROUTER.get("/items/")
+@ITEM_ROUTER.get("/items")
 def get_items(filter_params: Annotated[FilterParams, Query()]) -> list[Item]:
     "Get items with additional filters"
 
@@ -46,7 +47,7 @@ def get_items(filter_params: Annotated[FilterParams, Query()]) -> list[Item]:
     return [Item(**item) for item in items]
 
 
-@ITEM_ROUTER.get("/items/group-by-email/")
+@ITEM_ROUTER.get("/items/group-by-email")
 def get_item_count_per_email():
     "Get item count per email"
 

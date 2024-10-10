@@ -12,3 +12,4 @@ db = client.temp_db
 
 # Item table
 T_Item = db["Item"]
+T_ClockIn = db["ClockIn"]

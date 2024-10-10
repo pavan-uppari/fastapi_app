@@ -1,6 +1,6 @@
 from datetime import date
 
-from pydantic import BaseModel, EmailStr, StrictInt, Field
+from pydantic import BaseModel, EmailStr, Field
 
 
 class FilterParams(BaseModel):
