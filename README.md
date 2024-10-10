@@ -1,6 +1,6 @@
 # FASTAPI_APP
 
-> Hosted App Swagger URL - https://smoggy-alisha-pavanuppari-58ced895.koyeb.app/docs
+> Hosted App Swagger URL - https://voiceless-peafowl-pavanuppari-822d81b8.koyeb.app/docs
 
 ## Getting Started
 
