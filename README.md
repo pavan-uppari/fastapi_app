@@ -49,7 +49,7 @@ location - StrictStr
     4. quantity - return items whose quantity is greater than provided value
 4. DELETE /items/{id} - Delete an Item
 5. PUT /items/{id} - Update an Item
-6. GET /items/group-by-email - Get items count per email
+6. GET /items-group-by-email - Get items count per email
 
 ## ClockIn supported methods
 
