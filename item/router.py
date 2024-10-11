@@ -47,7 +47,7 @@ def get_items(filter_params: Annotated[FilterParams, Query()]) -> list[Item]:
     return [Item(**item) for item in items]
 
 
-@ITEM_ROUTER.get("/items/group-by-email")
+@ITEM_ROUTER.get("/items-group-by-email")
 def get_item_count_per_email():
     "Get item count per email"
 
