@@ -16,6 +16,10 @@ source env/bin/activate
 ```shell
 pip install -r requirements.txt
 ```
+4. Start server
+```shell
+uvicorn app:app --reload
+```
 
 ## Core Entities
 
